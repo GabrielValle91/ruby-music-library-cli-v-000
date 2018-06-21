@@ -13,13 +13,14 @@ class MusicImporter
     Dir["#{@path}/**/*.mp3"].each do |file_name|
       @files << file_name.gsub!(/.\/spec\/fixtures\/mp3s\//,"")
     end
-    binding.pry
+    #binding.pry
 
     @files
   end
 
   def import
     #@files = @files.uniq
+    self.files
     binding.pry
     @files.each do |file_name|
       Song.create_from_filename(file_name)
