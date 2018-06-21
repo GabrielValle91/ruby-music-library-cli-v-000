@@ -36,9 +36,7 @@ class MusicLibraryController
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
     answer = gets
-    chosen_artist = Artist.all.find do |args|
-      args.name == answer
-    end
+    chosen_artist = Artist.find_by_name(answer)
     chosen_artist.songs
   end
 
