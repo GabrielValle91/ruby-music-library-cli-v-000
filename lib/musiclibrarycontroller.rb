@@ -40,6 +40,14 @@ class MusicLibraryController
     end
   end
 
+  def list_genres
+    genre_list = Genre.all.sort_by! {|obj| obj.name}
+    counter = 1
+    genre_list.each do |genre_name|
+      puts "#{counter}. #{genre_name.name}"
+    end
+  end
+
   def update_song_list
     Song.all.each do |song_object|
       if !@@song_list.include?(song_object)
