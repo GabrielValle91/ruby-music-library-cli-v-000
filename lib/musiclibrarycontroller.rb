@@ -44,7 +44,7 @@ class MusicLibraryController
       @song_list.sort_by! {|obj| obj.name}
       song_list = []
       @song_list.each do |song_obj|
-        song_list << song_obj if song_obj.artist.name = answer
+        song_list << song_obj if song_obj.artist.name == answer
       end
       #puts each song with a number in front of it
       counter = 1
