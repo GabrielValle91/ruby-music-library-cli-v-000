@@ -22,6 +22,7 @@ class MusicImporter
     #@files = @files.uniq
     self.files
     binding.pry
+    @files.uniq
     @files.each do |file_name|
       Song.create_from_filename(file_name)
     end
