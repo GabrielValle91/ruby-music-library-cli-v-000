@@ -35,6 +35,10 @@ class MusicLibraryController
     self.play_song if answer == "play song"
   end
 
+  def play_song
+
+  end
+
   def list_songs_by_genre
     puts "Please enter the name of a genre:"
     answer = gets
