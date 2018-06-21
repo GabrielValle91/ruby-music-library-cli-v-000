@@ -11,7 +11,8 @@ class MusicImporter
 
   def files
     Dir["#{@path}/**/*.mp3"].each do |file_name|
-      @files << file_name.gsub!(/.\/spec\/fixtures\/mp3s\//,"").to_s
+      @files << file_name.gsub!(/.\/spec\/fixtures\/mp3s\//,"").to_s if @path == "./spec/fixtures/mp3s"
+      @files << file_name.gsub!(/.\/spec\/fixtures\/other_mp3s\//,"").to_s if @path == "./spec/fixtures/other_mp3s"
     end
     #binding.pry
 
@@ -21,7 +22,7 @@ class MusicImporter
   def import
     #@files = @files.uniq
     self.files
-    binding.pry
+    #binding.pry
     @files.uniq
     @files.each do |file_name|
       Song.create_from_filename(file_name)
