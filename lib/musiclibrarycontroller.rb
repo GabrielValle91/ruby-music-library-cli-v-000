@@ -40,7 +40,7 @@ class MusicLibraryController
     answer = gets
     answer_adj = answer.to_i
     answer_adj -= 1
-    
+
     alpha_song_list = []
     self.update_song_list
     #sort songs alphabetically
@@ -50,9 +50,9 @@ class MusicLibraryController
     @song_list.each do |song|
       alpha_song_list << "#{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
-    
+
     if answer_adj < alpha_song_list.length
-      chosen_song = song_list[answer_adj].split(" - ")
+      chosen_song = alpha_song_list[answer_adj].split(" - ")
       #{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
       puts "Playing #{chosen_song[1]} by #{chosen_song[0]}"
     end
