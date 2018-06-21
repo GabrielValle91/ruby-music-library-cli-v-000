@@ -36,8 +36,10 @@ class MusicLibraryController
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
     answer = gets
-    chosen_artist = Artist.find_by_name(answer)
-    chosen_artist.songs
+    if Artist.find_by_name(answer)
+      chosen_artist = Artist.find_by_name(answer)
+      chosen_artist.songs
+    end if
   end
 
   def list_artists
