@@ -12,6 +12,7 @@ class MusicLibraryController
     puts "Welcome to your music library!"
     answer = ""
     options = ["list songs" , "list genres" , "list artist" , "list genre" , "play song" , "exit"]
+    self.update_song_list
     while !options.include?(answer) do
       puts "To list all of your songs, enter 'list songs'."
       puts "To list all of the artists in your library, enter 'list artists'."
@@ -24,7 +25,7 @@ class MusicLibraryController
       answer = gets
     end
 
-    self.update_song_list
+    
 
     self.list_songs if answer == "list songs"
     self.list_artists if answer == "list artists"
@@ -45,7 +46,7 @@ class MusicLibraryController
 
   def list_songs
     #song_list = []
-
+    
     #sort songs alphabetically
     @song_list.sort_by! {|obj| obj.name}
     #puts each song with a number in front of it
