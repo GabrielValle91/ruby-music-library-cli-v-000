@@ -38,8 +38,16 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     answer = gets
-
-    list_songs
+    if Song.find_by_name(answer)
+      self.update_song_list
+      #sort songs alphabetically
+      @song_list.sort_by! {|obj| obj.name}
+      #binding.pry
+      @song_list.each do |song|
+        puts "Playing #{song.name} by  #{song.genre.name}"
+      end      
+    end
+    
   end
 
   def list_songs_by_genre
