@@ -13,7 +13,7 @@ class MusicImporter
     Dir["#{@path}/**/*.mp3"].each do |file_name|
       @files << file_name.gsub!(/.\/spec\/fixtures\/mp3s\//,"")
     end
-    #binding.pry
+    binding.pry
 
     @files
   end
