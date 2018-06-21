@@ -33,6 +33,10 @@ class MusicLibraryController
     self.list_songs_by_artist if answer == "list artist"
   end
 
+  def list_songs_by_artist
+
+  end
+
   def list_artists
     artist_list = Artist.all.sort_by! {|obj| obj.name}
     counter = 1
