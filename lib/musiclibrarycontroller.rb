@@ -40,7 +40,7 @@ class MusicLibraryController
     answer = gets
     answer_adj = answer.to_i
     answer_adj -= 1
-    if answer_adj > 0
+    if answer_adj >= 0
       alpha_song_list = []
       self.update_song_list
       #sort songs alphabetically
