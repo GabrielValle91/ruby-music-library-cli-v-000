@@ -33,7 +33,7 @@ class Song
     #binding.pry
     if file_name.class == String
       file_array = file_name.split(" - ")
-      binding.pry
+      #binding.pry
       new_song = self.find_or_create_by_name(file_array[1])
       new_song.artist = file_array[0]
       new_song.genre = file_array[2].slice(0,file_array[2].length - 4)
