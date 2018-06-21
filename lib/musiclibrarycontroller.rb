@@ -39,7 +39,17 @@ class MusicLibraryController
     answer = gets
     if Genre.find_by_name(answer)
       chosen_genre = Genre.find_by_name(answer)
-      
+      self.update_song_list
+      song_list = []
+      @song_list.each do |song_obj|
+        song_list << song_obj if song_obj.genre.name == answer
+      end
+      counter = 1
+
+      song_list.each do |song|
+        puts "#{counter}. #{song.name} - #{song.artist.name}"
+        counter += 1
+      end
     end
   end
 
