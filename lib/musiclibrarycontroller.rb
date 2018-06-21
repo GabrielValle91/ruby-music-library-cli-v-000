@@ -24,7 +24,7 @@ class MusicLibraryController
       answer = gets
     end
 
-    self.update_song_ist
+    self.update_song_list
 
     self.list_songs if answer == "list songs"
     self.list_artists if answer == "list artists"
