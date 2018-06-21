@@ -120,7 +120,7 @@ class MusicLibraryController
   end
 
   def list_songs
-    #song_list = []
+    alpha_song_list = []
     self.update_song_list
     #sort songs alphabetically
     @song_list.sort_by! {|obj| obj.name}
@@ -129,9 +129,10 @@ class MusicLibraryController
     #binding.pry
     @song_list.each do |song|
       puts "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+      alpha_song_list << "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
       counter += 1
     end
-
+    alpha_song_list
   end
 
 end
