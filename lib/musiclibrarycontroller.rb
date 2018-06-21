@@ -39,7 +39,7 @@ class MusicLibraryController
     if Artist.find_by_name(answer)
       chosen_artist = Artist.find_by_name(answer)
       chosen_artist.songs
-    end if
+    end
   end
 
   def list_artists
