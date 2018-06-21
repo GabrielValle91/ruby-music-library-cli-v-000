@@ -39,6 +39,16 @@ class MusicLibraryController
     if Artist.find_by_name(answer)
       chosen_artist = Artist.find_by_name(answer)
       chosen_artist.songs
+
+      self.update_song_list
+      @song_list.sort_by! {|obj| obj.name}
+      #puts each song with a number in front of it
+      counter = 1
+      #binding.pry
+      @song_list.each do |song|
+        puts "#{counter}. #{song.name} - #{song.genre.name}"
+        counter += 1
+      end
     end
   end
 
