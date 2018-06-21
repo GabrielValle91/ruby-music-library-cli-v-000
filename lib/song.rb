@@ -30,6 +30,7 @@ class Song
   end
 
   def self.new_from_filename(file_name)
+    binding.pry
     file_array = file_name.split(" - ")
     new_song = self.find_or_create_by_name(file_array[1])
     new_song.artist = file_array[0]
