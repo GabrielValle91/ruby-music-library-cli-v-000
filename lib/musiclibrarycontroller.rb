@@ -42,7 +42,6 @@ class MusicLibraryController
     answer_adj -= 1
     song_list = self.list_songs
     if answer_adj < song_list.length
-      
       chosen_song = song_list[answer_adj].split(" - ")
       #{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
       puts "Playing #{chosen_song[1]} by #{chosen_song[0]}"
