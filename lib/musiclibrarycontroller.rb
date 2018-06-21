@@ -29,6 +29,8 @@ class MusicLibraryController
 
     self.list_songs if answer == "list songs"
     self.list_artists if answer == "list artists"
+    self.list_genres if answer == "list genres"
+    self.list_songs_by_artist if answer == "list artist"
   end
 
   def list_artists
