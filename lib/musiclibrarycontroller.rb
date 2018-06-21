@@ -44,10 +44,10 @@ class MusicLibraryController
       @song_list.sort_by! {|obj| obj.name}
       #binding.pry
       @song_list.each do |song|
-        puts "Playing #{song.name} by  #{song.genre.name}"
-      end      
+        puts "Playing #{song.name} by #{song.genre.name}"
+      end
     end
-    
+
   end
 
   def list_songs_by_genre
