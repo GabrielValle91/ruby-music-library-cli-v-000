@@ -31,6 +31,16 @@ class MusicLibraryController
     self.list_artists if answer == "list artists"
     self.list_genres if answer == "list genres"
     self.list_songs_by_artist if answer == "list artist"
+    self.list_songs_by_genre if answer == "list genre"
+  end
+
+  def list_songs_by_genre
+    puts "Please enter the name of a genre:"
+    answer = gets
+    if Genre.find_by_name(answer)
+      chosen_genre = Genre.find_by_name(answer)
+      
+    end
   end
 
   def list_songs_by_artist
@@ -38,7 +48,7 @@ class MusicLibraryController
     answer = gets
     if Artist.find_by_name(answer)
       chosen_artist = Artist.find_by_name(answer)
-      chosen_artist.songs
+      #chosen_artist.songs
 
       self.update_song_list
       @song_list.sort_by! {|obj| obj.name}
