@@ -128,7 +128,7 @@ class MusicLibraryController
     #binding.pry
     @song_list.each do |song|
       puts "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-      alpha_song_list << "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+      alpha_song_list << "#{song.artist.name} - #{song.name} - #{song.genre.name}"
       counter += 1
     end
     alpha_song_list
