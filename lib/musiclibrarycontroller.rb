@@ -38,7 +38,7 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     answer = gets
-    answer_adj = answer - 1
+    answer_adj = (answer - 1)
     song_list = self.list_songs
     if (answer_adj) < song_list.length
       chosen_song = song_list[answer_adj].split(" - ")
