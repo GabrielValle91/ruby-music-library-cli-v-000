@@ -24,6 +24,11 @@ class MusicLibraryController
       answer = gets
     end
     self.list_songs if answer == "list songs"
+    self.list_artists if answer == "list artists"
+  end
+
+  def list_artists
+
   end
 
   def list_songs
