@@ -11,7 +11,7 @@ class MusicLibraryController
   def call
     puts "Welcome to your music library!"
     answer = ""
-    options = ["list songs" , "list genres" , "list artist" , "list genre" , "play song" , "exit"]
+    options = ["list songs" , "list artists", "list genres" , "list artist" , "list genre" , "play song" , "exit"]
 
     while !options.include?(answer) do
       puts "To list all of your songs, enter 'list songs'."
