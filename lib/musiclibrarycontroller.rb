@@ -33,6 +33,7 @@ class MusicLibraryController
     self.list_songs_by_artist if answer == "list artist"
     self.list_songs_by_genre if answer == "list genre"
     self.play_song if answer == "play song"
+
   end
 
   def play_song
