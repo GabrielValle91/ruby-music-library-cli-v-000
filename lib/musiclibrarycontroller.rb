@@ -23,6 +23,9 @@ class MusicLibraryController
       puts "What would you like to do?"
       answer = gets
     end
+
+    self.update_song_lsit
+    
     self.list_songs if answer == "list songs"
     self.list_artists if answer == "list artists"
   end
@@ -31,14 +34,18 @@ class MusicLibraryController
 
   end
 
-  def list_songs
-    #song_list = []
+  def update_song_list
     Song.all.each do |song_object|
       if !@@song_list.include?(song_object)
         @@song_list << song_object
         @song_list << song_object
       end
     end
+  end
+
+  def list_songs
+    #song_list = []
+    
     #sort songs alphabetically
     @song_list.sort_by! {|obj| obj.name}
     #puts each song with a number in front of it
