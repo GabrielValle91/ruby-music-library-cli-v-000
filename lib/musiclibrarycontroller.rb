@@ -40,21 +40,22 @@ class MusicLibraryController
     answer = gets
     answer_adj = answer.to_i
     answer_adj -= 1
+    if answer_adj > 0
+      alpha_song_list = []
+      self.update_song_list
+      #sort songs alphabetically
+      @song_list.sort_by! {|obj| obj.name}
+      #puts each song with a number in front of it
+      #binding.pry
+      @song_list.each do |song|
+        alpha_song_list << "#{song.artist.name} - #{song.name} - #{song.genre.name}"
+      end
 
-    alpha_song_list = []
-    self.update_song_list
-    #sort songs alphabetically
-    @song_list.sort_by! {|obj| obj.name}
-    #puts each song with a number in front of it
-    #binding.pry
-    @song_list.each do |song|
-      alpha_song_list << "#{song.artist.name} - #{song.name} - #{song.genre.name}"
-    end
-
-    if answer_adj < alpha_song_list.length
-      chosen_song = alpha_song_list[answer_adj].split(" - ")
-      #{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-      puts "Playing #{chosen_song[1]} by #{chosen_song[0]}"
+      if answer_adj < alpha_song_list.length
+        chosen_song = alpha_song_list[answer_adj].split(" - ")
+        #{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+        puts "Playing #{chosen_song[1]} by #{chosen_song[0]}"
+      end
     end
 
   end
