@@ -41,9 +41,11 @@ class Song
   end
 
   def self.create_from_filename(file_name)
-    new_song = self.new_from_filename(file_name)
-    new_song.save
-    new_song
+    if file_name.class == String
+      new_song = self.new_from_filename(file_name)
+      new_song.save
+      new_song
+    end
   end
 
   def self.create(name)
