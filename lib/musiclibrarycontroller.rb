@@ -46,7 +46,7 @@ class MusicLibraryController
       #{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
       puts "Playing #{chosen_song[1]} by #{chosen_song[0]}"
     end
-    
+
   end
 
   def list_songs_by_genre
