@@ -25,7 +25,7 @@ class MusicLibraryController
       answer = gets
     end
 
-    
+
 
     self.list_songs if answer == "list songs"
     self.list_artists if answer == "list artists"
@@ -46,7 +46,7 @@ class MusicLibraryController
 
   def list_songs
     #song_list = []
-    
+
     #sort songs alphabetically
     @song_list.sort_by! {|obj| obj.name}
     #puts each song with a number in front of it
