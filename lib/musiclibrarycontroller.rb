@@ -32,7 +32,7 @@ class MusicLibraryController
   end
 
   def list_artists
-    artist_list = Arist.all.sort_by! {|obj| obj.name}
+    artist_list = Artist.all.sort_by! {|obj| obj.name}
     counter = 1
     artist_list.each do |artist_name|
       puts "#{counter}. #{artist_name.name}"
